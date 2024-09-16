@@ -1,7 +1,11 @@
 const mongoose = require('mongoose');
+const dotenv = require('dotenv');
 
-// MongoDB connection URI
-const uri = 'mongodb+srv://pankaj:o9phHPzQ0p5D5Rq1@cluster0.yvs1pu5.mongodb.net/sharedb';
+// Load environment variables from .env file
+dotenv.config();
+
+// Get MongoDB URI from environment variables
+const uri = process.env.MONGO_URI;
 
 const connectDB = async () => {
   try {
